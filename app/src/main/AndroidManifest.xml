@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Localcoin">
         <activity
+            android:name=".AddCoinActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PortfolioActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
