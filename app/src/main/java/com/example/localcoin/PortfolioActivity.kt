@@ -37,7 +37,7 @@ class PortfolioActivity : AppCompatActivity() {
                 listC.text = text
             }
 
-
+            fis.close()
         } catch (e: IOException) {
             println("Failed to open file HERE")
             e.printStackTrace()
