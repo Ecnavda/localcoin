@@ -3,10 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/isa_m/Documents/GitHub/localcoin/app/src/main/res/layout/activity_add_coin.xml" value="0.28020833333333334" />
-        <entry key="..\:/Users/isa_m/Documents/GitHub/localcoin/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/isa_m/Documents/GitHub/localcoin/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/isa_m/Documents/GitHub/localcoin/app/src/main/res/layout/activity_portfolio.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/samus/AndroidStudioProjects/localcoin/app/src/main/res/layout/activity_add_coin.xml" value="0.1828125" />
+        <entry key="..\:/Users/samus/AndroidStudioProjects/localcoin/app/src/main/res/layout/activity_login.xml" value="0.1828125" />
+        <entry key="..\:/Users/samus/AndroidStudioProjects/localcoin/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/samus/AndroidStudioProjects/localcoin/app/src/main/res/layout/activity_portfolio.xml" value="0.1828125" />
       </map>
     </option>
   </component>
