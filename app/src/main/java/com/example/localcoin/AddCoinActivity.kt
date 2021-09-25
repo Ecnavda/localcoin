@@ -5,11 +5,15 @@ import android.content.Intent
 import android.content.res.AssetManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import java.io.FileOutputStream
+import android.widget.Toast
+import java.io.*
+import java.lang.StringBuilder
 
 class AddCoinActivity : AppCompatActivity() {
+    val FILE_NAME = "test_3.txt"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_coin)
@@ -21,13 +25,25 @@ class AddCoinActivity : AppCompatActivity() {
 
 
         getCoinButton.setOnClickListener {
-            val coinName = coinNameTextView.getText().toString()
-            val numberCoin = numbCointextView.getText().toString()
+            val coinName = coinNameTextView.text.toString()
+            val numberCoin = numbCointextView.text.toString()
+            println(coinName)
+            println("I am dumb")
+            try {
+                val fos = openFileOutput(FILE_NAME,  MODE_APPEND)
+                fos.write(coinName.toByteArray())
+                fos.write(" ".toByteArray())
+                fos.write(numberCoin.toByteArray())
+                fos.write("\n".toByteArray())
+                fos.close()
 
-            val assetManager: AssetManager = this.assets
-
+            } catch (e: IOException) {
+                println("Failed to open file")
+                e.printStackTrace()
+            }
 
             val int = Intent(this, PortfolioActivity::class.java)
+
             this.startActivity(int)
 
         }
