@@ -12,10 +12,8 @@
         android:layout_height="919dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.493"
         app:srcCompat="@drawable/login_signin" />
 
     <ImageView
@@ -47,12 +45,12 @@
         android:layout_width="280dp"
         android:layout_height="50dp"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="64dp"
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.213"
         tools:ignore="SpeakableTextPresentCheck" />

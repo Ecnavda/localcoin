@@ -1,31 +1,37 @@
 package com.example.localcoin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
+import android.os.PersistableBundle
+import android.widget.ImageButton
+import androidx.fragment.app.FragmentContainerView
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.FragmentNavigator
-import androidx.navigation.fragment.NavHostFragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 class accountActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_account)
 
-
-
-
+        findViewById<ImageButton>(R.id.accountNavbarAddCoinButton).setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragmentContainerView, AddCoin())
+                .commit()
         }
-
-
-
-
-
-
-
-
+        findViewById<ImageButton>(R.id.accountNavbarPortfolioButton).setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragmentContainerView, Portfolio())
+                .commit()
+        }
+        findViewById<ImageButton>(R.id.accountNavbarSearchButton).setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragmentContainerView, AddCoin())
+                .commit()
+        }
+        findViewById<ImageButton>(R.id.accountNavbarProfileButton).setOnClickListener {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragmentContainerView, AddCoin())
+                .commit()
+        }
     }
+}

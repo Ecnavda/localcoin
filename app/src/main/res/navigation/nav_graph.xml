@@ -26,7 +26,7 @@
         android:label="fragment_portfolio"
         tools:layout="@layout/fragment_portfolio" >
         <action
-            android:id="@+id/goToAddCoin"
+            android:id="@+id/action_Portfolio_to_AddCoin"
             app:destination="@id/addCoin2" />
         <action
             android:id="@+id/action_portfolio_to_profileFragment"

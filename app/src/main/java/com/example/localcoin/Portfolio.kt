@@ -5,16 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import androidx.navigation.NavHost
+import android.widget.ImageButton
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.io.BufferedReader
 import java.io.IOException
-import java.io.InputStream
 import java.io.InputStreamReader
 import java.lang.StringBuilder
 
@@ -25,7 +22,6 @@ import java.lang.StringBuilder
 class Portfolio : Fragment() {
     val FILE_NAME = "test_newFile2.txt"
     val listOfCoins = mutableListOf<CoinItem>()
-
 
 
     override fun onCreateView(
@@ -45,19 +41,10 @@ class Portfolio : Fragment() {
 
         my_recycler?.adapter = adapter
 
-        /*
-        var button_add_coin = view.findViewById<ImageView>(R.id.accountN)
-
-        button_add_coin.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.goToAddCoin)
-        }
-        */
         return view
-
     }
 
     fun getData(){
-        //val addCoinButton = findViewById<Button>(R.id.addCoin)
         try {
             val fis = context?.openFileInput(FILE_NAME)
             val irs = InputStreamReader(fis)
@@ -83,7 +70,6 @@ class Portfolio : Fragment() {
                     listOfCoins.add(coin_temp)
                     line = br.readLine()
                 }
-
             }
 
             if (fis != null) {
@@ -94,12 +80,4 @@ class Portfolio : Fragment() {
             e.printStackTrace()
         }
     }
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-    }
-
 }
