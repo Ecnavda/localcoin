@@ -33,5 +33,9 @@
         android:id="@+id/addCoin2"
         android:name="com.example.localcoin.AddCoin"
         android:label="fragment_add_coin"
-        tools:layout="@layout/fragment_add_coin" />
+        tools:layout="@layout/fragment_add_coin" >
+        <action
+            android:id="@+id/action_addCoin2_to_portfolio"
+            app:destination="@id/portfolio" />
+    </fragment>
 </navigation>

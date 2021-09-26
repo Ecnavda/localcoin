@@ -27,10 +27,10 @@
         android:src="@drawable/box"
         app:layout_constraintBottom_toBottomOf="@+id/imageView12"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469" />
+        app:layout_constraintVertical_bias="0.466" />
 
     <ImageView
         android:id="@+id/imageView17"
@@ -45,16 +45,15 @@
         app:layout_constraintVertical_bias="0.607" />
 
     <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="255dp"
-        android:layout_height="132dp"
+        android:id="@+id/coinAddButton"
+        android:layout_width="253dp"
+        android:layout_height="75dp"
         android:src="@drawable/addbutton"
         app:layout_constraintBottom_toBottomOf="@+id/imageView13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView13"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintVertical_bias="0.844" />
 
     <ImageView
         android:id="@+id/imageView18"
@@ -80,5 +79,28 @@
         app:layout_constraintStart_toStartOf="@+id/imageView10"
         app:layout_constraintTop_toTopOf="@+id/imageView10"
         app:srcCompat="@drawable/pluswhite_1" />
+
+    <Spinner
+        android:id="@+id/coinNameSpin"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="260dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/coinQuantity"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.593" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
