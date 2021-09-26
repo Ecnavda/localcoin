@@ -32,13 +32,17 @@ class CoinAdapter (private val coins: List<CoinItem>)  : RecyclerView.Adapter<Co
 
     override fun onBindViewHolder(holder: CoinViewHolder, position: Int) {
         val coin : CoinItem = coins[position]
+        println("ADAPTER")
+        println(coin.name)
         holder.coinName.text = coin.name
+        println(coin.qyt.toString())
         holder.qtyName.text = coin.qyt.toString()
+        println(coin.totalAmount.toString())
         holder.totalAmount.text = coin.totalAmount.toString()
 
     }
     override fun getItemCount(): Int {
-        return 8
+        return coins.size
     }
 
 

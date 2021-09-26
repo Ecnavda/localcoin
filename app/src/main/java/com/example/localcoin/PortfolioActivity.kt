@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.AttributeSet
 import android.view.View
 import android.widget.Button
@@ -23,7 +24,7 @@ class PortfolioActivity : AppCompatActivity() {
 
         val addCoinButton = findViewById<Button>(R.id.addCoin)
         try {
-
+5
             val fis = openFileInput(FILE_NAME)
             val irs = InputStreamReader(fis)
             val br = BufferedReader(irs)
@@ -62,14 +63,23 @@ class PortfolioActivity : AppCompatActivity() {
             val intention = Intent(this, AddCoinActivity::class.java)
             this.startActivity(intention)
         }
+        //val recyclerView = findViewById<RecyclerView>(R.id.coinRecycler)
+        //val adapter = CoinAdapter(listOfCoins)
+
+        //recyclerView.adapter
     }
 
     override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
         return super.onCreateView(name, context, attrs)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.coinRecycler)
-        val adapter = CoinAdapter(listOfCoins)
-
-        recyclerView.adapter = adapter
     }
+
+    override fun onPostCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onPostCreate(savedInstanceState, persistentState)
+
+
+
+    }
+
+
 }

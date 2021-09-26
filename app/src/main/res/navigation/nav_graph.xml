@@ -2,11 +2,36 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/portfolio">
 
     <activity
         android:id="@+id/portfolioActivity"
         android:name="com.example.localcoin.PortfolioActivity"
         android:label="activity_portfolio"
         tools:layout="@layout/activity_portfolio" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.localcoin.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <activity
+        android:id="@+id/accountActivity"
+        android:name="com.example.localcoin.accountActivity"
+        android:label="activity_account"
+        tools:layout="@layout/activity_account" />
+    <fragment
+        android:id="@+id/portfolio"
+        android:name="com.example.localcoin.Portfolio"
+        android:label="fragment_portfolio"
+        tools:layout="@layout/fragment_portfolio" >
+        <action
+            android:id="@+id/goToAddCoin"
+            app:destination="@id/addCoin2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCoin2"
+        android:name="com.example.localcoin.AddCoin"
+        android:label="fragment_add_coin"
+        tools:layout="@layout/fragment_add_coin" />
 </navigation>
