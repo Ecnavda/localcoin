@@ -11,7 +11,7 @@ import java.io.*
 import java.lang.StringBuilder
 
 class AddCoinActivity : AppCompatActivity() {
-    val FILE_NAME = "test_3.txt"
+    val FILE_NAME = "test_list1.txt"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_coin)
@@ -41,6 +41,8 @@ class AddCoinActivity : AppCompatActivity() {
                 fos.write(coinName.toByteArray())
                 fos.write(" ".toByteArray())
                 fos.write(numberCoin.toByteArray())
+                fos.write(" ".toByteArray())
+                fos.write("45".toByteArray())
                 fos.write("\n".toByteArray())
                 fos.close()
 
