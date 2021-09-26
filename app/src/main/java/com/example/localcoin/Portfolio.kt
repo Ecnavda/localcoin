@@ -45,12 +45,13 @@ class Portfolio : Fragment() {
 
         my_recycler?.adapter = adapter
 
-
-        var button_add_coin = view.findViewById<ImageView>(R.id.addCoinToPort)
+        /*
+        var button_add_coin = view.findViewById<ImageView>(R.id.accountN)
 
         button_add_coin.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.goToAddCoin)
         }
+        */
         return view
 
     }
