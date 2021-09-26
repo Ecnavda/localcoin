@@ -5,24 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
-import androidx.fragment.app.FragmentManager
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
-import java.lang.StringBuilder
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
 
 class Portfolio : Fragment() {
-    val FILE_NAME = "LatestCrypto.txt"
+    val FILE_NAME = "FreshFile4.txt"
     val listOfCoins = mutableListOf<CoinItem>()
 
 
