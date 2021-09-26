@@ -15,7 +15,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         confirmLoginButton.setOnClickListener{
-            val intention = Intent(this, PortfolioActivity::class.java)
+            val intention = Intent(this, accountActivity::class.java)
             this.startActivity(intention)
         }
     }
