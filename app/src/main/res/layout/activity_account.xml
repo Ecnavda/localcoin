@@ -34,7 +34,7 @@
             app:srcCompat="@drawable/pluswhite_1" />
 
         <ImageButton
-            android:id="@+id/accountNavbarProfileButton"
+            android:id="@+id/accountNavbarPortfolioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -54,7 +54,7 @@
             app:srcCompat="@drawable/searchwhite" />
 
         <ImageButton
-            android:id="@+id/accountNavberProfileButton"
+            android:id="@+id/accountNavbarProfileButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
