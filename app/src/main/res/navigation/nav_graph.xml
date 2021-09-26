@@ -28,6 +28,12 @@
         <action
             android:id="@+id/action_Portfolio_to_AddCoin"
             app:destination="@id/addCoin2" />
+        <action
+            android:id="@+id/action_portfolio_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_portfolio_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCoin2"
@@ -37,5 +43,49 @@
         <action
             android:id="@+id/action_addCoin2_to_portfolio"
             app:destination="@id/portfolio" />
+        <action
+            android:id="@+id/action_addCoin2_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_addCoin2_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.localcoin.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_portfolio"
+            app:destination="@id/portfolio" />
+        <action
+            android:id="@+id/action_profileFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_profileFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.localcoin.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_addCoin2"
+            app:destination="@id/addCoin2" />
+        <action
+            android:id="@+id/action_searchFragment_to_portfolio"
+            app:destination="@id/portfolio" />
+        <action
+            android:id="@+id/action_searchFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_accountActivity"
+            app:destination="@id/accountActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.localcoin.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 </navigation>
