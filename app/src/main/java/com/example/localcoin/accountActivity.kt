@@ -25,12 +25,12 @@ class accountActivity : AppCompatActivity() {
         }
         findViewById<ImageButton>(R.id.accountNavbarSearchButton).setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .add(R.id.fragmentContainerView, AddCoin())
+                .add(R.id.fragmentContainerView, SearchFragment())
                 .commit()
         }
         findViewById<ImageButton>(R.id.accountNavbarProfileButton).setOnClickListener {
             supportFragmentManager.beginTransaction()
-                .add(R.id.fragmentContainerView, AddCoin())
+                .add(R.id.fragmentContainerView, ProfileFragment())
                 .commit()
         }
     }
