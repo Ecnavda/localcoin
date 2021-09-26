@@ -10,9 +10,9 @@
         android:layout_weight="1"
         android:fontFamily="@font/ropa_sans"
         android:text="TextView"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textColor="#FFFFFF"
-        android:textSize="34sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/qty_Coin"
@@ -21,18 +21,18 @@
         android:layout_weight="1"
         android:fontFamily="@font/ropa_sans"
         android:text="TextView"
-        android:textAlignment="center"
+        android:textAlignment="viewEnd"
         android:textColor="#FFFFFF"
-        android:textSize="34sp" />
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/totalAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="5"
         android:fontFamily="@font/ropa_sans"
         android:text="TextView"
-        android:textAlignment="center"
+        android:textAlignment="viewEnd"
         android:textColor="#FFFFFF"
-        android:textSize="34sp" />
+        android:textSize="30sp" />
 </LinearLayout>

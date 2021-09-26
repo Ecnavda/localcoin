@@ -6,12 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
+import org.json.JSONObject
 import java.io.IOException
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,7 +23,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class AddCoin : Fragment() {
-    val FILE_NAME = "test_newFile2.txt"
+    val FILE_NAME = "LatestCrypto.txt"
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -61,29 +59,23 @@ class AddCoin : Fragment() {
         }
 
         coinButton.setOnClickListener {
-            //val coinName = coinNameTextView.text.toString()
-            val coinName = coinSpin.selectedItem.toString()
-            val numberCoin = coinQuantity.text.toString()
-            println(coinName)
-            println("I am dumb")
-            try {
-                val fos = view.context.openFileOutput(FILE_NAME, AppCompatActivity.MODE_APPEND)
-                fos.write(coinName.toByteArray())
-                fos.write(" ".toByteArray())
-                fos.write(numberCoin.toByteArray())
-                fos.write(" ".toByteArray())
-                fos.write("45".toByteArray())
-                fos.write("\n".toByteArray())
-                fos.close()
-
-            } catch (e: IOException) {
-                println("Failed to open file")
-                e.printStackTrace()
+            if (coinQuantity.text.isNotBlank()) {
+                val coinName = coinSpin.selectedItem.toString()
+                val numberCoin = coinQuantity.text.toString()
+                try {
+                    val fos = view.context.openFileOutput(FILE_NAME, AppCompatActivity.MODE_APPEND)
+                    val jString: String = "{\"coinName\":\"$coinName\",\"quantity\":\"$numberCoin\"}\n"
+                    fos.write(jString.toByteArray())
+                    fos.close()
+                } catch (e: IOException) {
+                    println("Failed to open file")
+                    e.printStackTrace()
+                }
+                coinQuantity.text = null
+                Toast.makeText(view.context, "Cryptocurrency Added", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(view.context, "Please enter a quantity", Toast.LENGTH_SHORT).show()
             }
-
-            Navigation.findNavController(view).navigate(R.id.action_addCoin2_to_portfolio)
-
-
         }
     }
 

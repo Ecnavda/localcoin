@@ -3,7 +3,6 @@
     <string-array name="coin_spinner">
         <item>BTC</item>
         <item>ETH</item>
-        <item>XRP</item>
         <item>LTC</item>
         <item>BCH</item>
     </string-array>
