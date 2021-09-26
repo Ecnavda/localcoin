@@ -58,7 +58,7 @@ class Portfolio : Fragment() {
                     listOfCoins.add(
                         CoinItem(
                             crypto_json.get("coinName").toString(),
-                            crypto_json.get("quantity").toString().toInt()
+                            crypto_json.get("quantity").toString().toDouble()
                         )
                     )
                 }
