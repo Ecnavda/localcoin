@@ -23,7 +23,7 @@ import java.lang.StringBuilder
 
 
 class Portfolio : Fragment() {
-    val FILE_NAME = "test_list1.txt"
+    val FILE_NAME = "test_newFile2.txt"
     val listOfCoins = mutableListOf<CoinItem>()
 
 
