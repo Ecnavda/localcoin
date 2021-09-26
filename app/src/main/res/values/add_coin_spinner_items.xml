@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="coin_spinner">
+        <item>BTC</item>
+        <item>ETH</item>
+        <item>XRP</item>
+        <item>LTC</item>
+        <item>BCH</item>
+    </string-array>
+</resources>
