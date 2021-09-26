@@ -37,7 +37,8 @@ class CoinAdapter (private val coins: List<CoinItem>)  : RecyclerView.Adapter<Co
             val api = API()
             val c = coin.name + "-USD"
             val q = coin.qyt.toString() + ".00"
-            api.launchDataLoad(c,"5.00", holder.totalAmount)
+            println(q)
+            api.launchDataLoad(c,q, holder.totalAmount)
         }
         holder.qtyName.text = coin.qyt.toString()
         holder.totalAmount.text = ""
