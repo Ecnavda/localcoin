@@ -20,16 +20,15 @@ import org.json.JSONObject
 class API : ViewModel() {
     private val base_url = "portal.coinroutes.com"
 
-    fun launchDataLoad(c: String, q: String, index: Int, v: View) : String {
-        var price : String = ""
+    fun launchDataLoad(c: String, q: String, v: TextView) {
         viewModelScope.launch {
-            price = streamPrice(c, q, index, v)
+        val price = streamPrice(c, q)
+        v.text = price
         }
-        return price
     }
 
-    suspend fun streamPrice(currency_pair: String, quantity: String, index: Int, v: View) : String = withContext(Dispatchers.IO) {
-        var price = ""
+    suspend fun streamPrice(currency_pair: String, quantity: String) : String = withContext(Dispatchers.IO) {
+        var finalPrice = ""
         val RealPriceRequest: JSONObject = JSONObject()
         RealPriceRequest.put("currency_pair", currency_pair)
         RealPriceRequest.put("quantity", quantity)
@@ -44,20 +43,15 @@ class API : ViewModel() {
             path = "/api/streaming/real_price/?token=6c634e1eacecc4801b000249287fbf923d5c8824"
         ) {
             send(RealPriceRequest.toString())
+            val mesg = incoming.receive() as? Frame.Text
+            println(mesg?.readText())
+            var convert_me_daddy = JSONObject(mesg?.readText().toString()).get("price")
 
-                val mesg = incoming.receive() as? Frame.Text
-                println(mesg?.readText())
-                price = JSONObject(mesg?.readText().toString()).get("price").toString()
-                v.findViewById<TextView>(R.id.price1)
-                println(price)
-
-                //val mesgJSON = JSONObject(mesg?.readText().toString())
-                //println(mesgJSON.get("product"))
-                //println(mesgJSON.get("price"))
+            finalPrice = "$%.2f".format(convert_me_daddy)
 
         }
         client.close()
-        return@withContext price
+        return@withContext finalPrice
     }
 
 

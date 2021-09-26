@@ -63,7 +63,7 @@ class Portfolio : Fragment() {
                     )
                 }
             }
-            println(v.findViewById<Button>(R.id.portfolioPriceButton).visibility)// = View.VISIBLE
+            //println(v.findViewById<Button>(R.id.portfolioPriceButton).visibility)// = View.VISIBLE
             /*
             var line : String? = ""
             line = br.readLine()
@@ -93,11 +93,11 @@ class Portfolio : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getPrice(view)
+
     }
 
     private fun getPrice(v: View) {
-        var price = ""
+        var coinArray = ArrayList<String>()
         val api = API()
         val fis = v.context?.openFileInput(FILE_NAME)
         val irs = InputStreamReader(fis)
@@ -105,12 +105,10 @@ class Portfolio : Fragment() {
         val line_stream = br.lines()
         for (i in 1..3) {
             val crypto_json = JSONObject(br.readLine())
-            if (crypto_json.get("coinName").toString().isNotEmpty() && crypto_json.get("quantity")
-                    .toString().isNotEmpty()
-            ) {
+            if (crypto_json.get("coinName").toString().isNotEmpty() && crypto_json.get("quantity").toString().isNotEmpty()) {
                 val coin = crypto_json.get("coinName").toString() + "-USD"
+                coinArray.add(coin)
 
-                api.launchDataLoad(coin, "5.00", i, v)
             }
         }
     }
