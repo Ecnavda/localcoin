@@ -8,18 +8,21 @@
 
     <ImageView
         android:id="@+id/fragmentPortfolioBackground"
-        android:layout_width="529dp"
-        android:layout_height="928dp"
+        android:layout_width="446dp"
+        android:layout_height="829dp"
         android:src="@drawable/data_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.265" />
 
     <ImageView
         android:id="@+id/portfolioFormBackground"
         android:layout_width="378dp"
         android:layout_height="616dp"
+        android:alpha="50"
         android:src="@drawable/box"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,9 +54,8 @@
         android:src="@drawable/portfolio"
         app:layout_constraintBottom_toTopOf="@+id/coinRecycler"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.784" />
+        app:layout_constraintVertical_bias="0.849" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
