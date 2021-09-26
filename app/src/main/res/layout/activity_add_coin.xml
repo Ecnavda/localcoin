@@ -21,21 +21,11 @@
         android:id="@+id/numberOfCoin"
         android:layout_width="280dp"
         android:layout_height="60dp"
-        android:layout_marginTop="128dp"
         android:ems="10"
         android:hint="Quantity"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/coinNameSpin" />
+        tools:layout_editor_absoluteY="340dp" />
 
-    <Spinner
-        android:id="@+id/coinNameSpin"
-        android:layout_width="280dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="152dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
