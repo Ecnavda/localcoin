@@ -1,6 +1,7 @@
 package com.example.localcoin
 
 import android.view.View
+import android.widget.TextView
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import io.ktor.client.*
@@ -19,13 +20,16 @@ import org.json.JSONObject
 class API : ViewModel() {
     private val base_url = "portal.coinroutes.com"
 
-    fun launchDataLoad(c: String, q: String) {
+    fun launchDataLoad(c: String, q: String, index: Int, v: View) : String {
+        var price : String = ""
         viewModelScope.launch {
-            streamPrice(c, q)
+            price = streamPrice(c, q, index, v)
         }
+        return price
     }
 
-    suspend fun streamPrice(currency_pair: String, quantity: String) = withContext(Dispatchers.IO) {
+    suspend fun streamPrice(currency_pair: String, quantity: String, index: Int, v: View) : String = withContext(Dispatchers.IO) {
+        var price = ""
         val RealPriceRequest: JSONObject = JSONObject()
         RealPriceRequest.put("currency_pair", currency_pair)
         RealPriceRequest.put("quantity", quantity)
@@ -40,15 +44,20 @@ class API : ViewModel() {
             path = "/api/streaming/real_price/?token=6c634e1eacecc4801b000249287fbf923d5c8824"
         ) {
             send(RealPriceRequest.toString())
-            while (true) {
+
                 val mesg = incoming.receive() as? Frame.Text
                 println(mesg?.readText())
+                price = JSONObject(mesg?.readText().toString()).get("price").toString()
+                v.findViewById<TextView>(R.id.price1)
+                println(price)
+
                 //val mesgJSON = JSONObject(mesg?.readText().toString())
                 //println(mesgJSON.get("product"))
                 //println(mesgJSON.get("price"))
-            }
+
         }
         client.close()
+        return@withContext price
     }
 
 

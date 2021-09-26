@@ -10,7 +10,7 @@
         android:layout_weight="1"
         android:fontFamily="@font/ropa_sans"
         android:text="TextView"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="#FFFFFF"
         android:textSize="34sp" />
 
@@ -21,7 +21,6 @@
         android:layout_weight="1"
         android:fontFamily="@font/ropa_sans"
         android:text="TextView"
-        android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="34sp" />
 
@@ -32,7 +31,7 @@
         android:layout_weight="1"
         android:fontFamily="@font/ropa_sans"
         android:text="TextView"
-        android:textAlignment="center"
+        android:textAlignment="textEnd"
         android:textColor="#FFFFFF"
         android:textSize="34sp" />
 </LinearLayout>
